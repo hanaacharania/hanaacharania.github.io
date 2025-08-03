@@ -15,3 +15,32 @@ title: "Home"
   {% capture source %}{% include_relative archive.html title="Posts" %}{% endcapture %}
   {{ source | split: "---" | last }}
 {% endif %}
+
+<hr>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <ul>
+    <li><strong>Personal Portfolio:</strong> A sleek Jekyll site showcasing my work.</li>
+    <li><strong>Open Source Contributions:</strong> PRs to RubyGems, Contrast Theme.</li>
+    <li><strong>AI-Powered Chatbot:</strong> Built using Python and OpenAI API.</li>
+  </ul>
+</section>
+
+<hr>
+
+<section id="resume">
+  <h2>Resume</h2>
+  <p>You can <a href="assets/Hanaa_Charania_Resume.pdf" target="_blank">download my resume here</a>.</p>
+
+  <h3>Experience</h3>
+  <ul>
+    <li><strong>Software Engineer</strong> – ABC Company (2023–present)</li>
+    <li><strong>Research Assistant</strong> – University Lab (2022–2023)</li>
+  </ul>
+
+  <h3>Education</h3>
+  <ul>
+    <li>B.S. in Computer Science – Example University (2019–2023)</li>
+  </ul>
+</section>
