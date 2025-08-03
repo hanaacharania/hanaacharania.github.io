@@ -3,21 +3,6 @@ layout: default
 title: "Home"
 ---
 
-{% if site.show_excerpts %}
-  {% for post in site.posts %}
-    <article>
-      {% include meta.html post=post %}
-      {{ post.excerpt }}
-      <div class="more"><a href="{{ post.url | relative_url }}">read more</a></div>
-    </article>
-  {% endfor %}
-{% else %}
-  {% capture source %}{% include_relative archive.html title="Posts" %}{% endcapture %}
-  {{ source | split: "---" | last }}
-{% endif %}
-
-<hr>
-
 <section id="projects">
   <h2>Projects</h2>
   <ul>
@@ -27,11 +12,9 @@ title: "Home"
   </ul>
 </section>
 
-<hr>
-
 <section id="resume">
   <h2>Resume</h2>
-  <p>You can <a href="assets/Hanaa_Charania_Resume.pdf" target="_blank">download my resume here</a>.</p>
+  <p>You can <a href="/assets/resume.pdf" target="_blank">download my resume here</a>.</p>
 
   <h3>Experience</h3>
   <ul>
