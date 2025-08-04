@@ -9,12 +9,13 @@
         {% assign title = item.title | default: node.title %}
         {% assign icon = item.icon | default: item.sidebaricon %}
 
-        {% if key == 'external' %}
-          <a href="{{ url | relative_url }}" class="{% if url == page.url %}selected{% endif %}" target="_blank" rel="noopener noreferrer">
-        {% else %}
-          <a href="{{ url | relative_url }}" class="{% if url == page.url %}selected{% endif %}">
-        {% endif %}
+        {% assign is_external = url contains 'http' %}
 
+        <a 
+          href="{% if is_external %}{{ url }}{% else %}{{ url | relative_url }}{% endif %}" 
+          class="{% if url == page.url %}selected{% endif %}"
+          {% if is_external %}target="_blank" rel="noopener noreferrer"{% endif %}
+        >
           <svg aria-hidden="true" width="1em" height="1em">
             <use xlink:href="{{ "/assets/fontawesome/icons.svg" | relative_url }}#{{ icon }}"></use>
           </svg>
